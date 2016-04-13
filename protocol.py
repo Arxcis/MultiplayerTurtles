@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+class NetworkProtocol:
 
-def MOVE(playername, direction):
-    return 'move,%s,%s' % (playername, direction)
+    def MOVE(self, playername, direction):
+        return 'move,%s,%s' % (playername, direction)
 
-def CREATE(playername):
-    return 'create,%s' % (playername)
+    def CREATE(self, playername):
+        return 'create,%s' % (playername)
 
-def REMOVE(playername):
-    return 'remove,%s' % (playername)
+    def REMOVE(self, playername):
+        return 'remove,%s' % (playername)
+
