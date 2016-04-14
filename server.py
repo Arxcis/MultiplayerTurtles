@@ -5,7 +5,6 @@ from socket import socket
 clients = []
 
 def relay(msg):
-    print(clients)
     for client in clients:
         client.request.send(msg)
 
@@ -37,7 +36,7 @@ class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
 
 
 if __name__ == "__main__":
-    HOST, PORT = "127.0.0.1", 1337
+    HOST, PORT = "192.168.1.10", 1337
 
     # Create the server, binding to server-IP on port 1337
     server = ThreadedTCPServer((HOST, PORT), ClientHandler)

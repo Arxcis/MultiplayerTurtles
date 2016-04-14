@@ -17,7 +17,7 @@ def listen_to_server(container, tom):
     print ("Started the thread")
 
     name, handler, protocol = container
-    ip = '127.0.0.1'
+    ip = '192.168.1.10'
     port = 1337
 
     s.connect((ip, port))
