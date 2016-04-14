@@ -5,7 +5,7 @@
 from turtle import Turtle, Screen
 
 # Lokale moduler
-from keys import bind_keys
+from keybinds import bind_keys
 from protocol import NetworkProtocol
 import networks
 
