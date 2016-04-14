@@ -41,24 +41,13 @@ class Handler:
         :param playername:
         :return:
         """
-        players[playername] = Turtle()
+        if playername not in players:
+            players[playername] = Turtle()
 
         padde = players[playername]
         padde.color(playername)
         padde.shape("turtle")
         padde.penup()
-
-    def remove(self, playername):
-        """
-        Fjern turtle 
-        :param playername:
-        :return:
-        """
-        padde = players[playername]
-        padde.clear()
-        padde.ht()
-
-        del(players[playername])
 
     def move(self, playername, direction):
         """
@@ -67,9 +56,25 @@ class Handler:
         :param playername:
         :return:
         """
+        if playername not in players:
+            self.create(playername)
+
         padde = players[playername]
         padde.seth(direction)
         padde.forward(50)
+
+    def remove(self, playername):
+        """
+        Fjern turtle 
+        :param playername:
+        :return:
+        """
+        if playername in players:
+            padde = players[playername]
+            padde.clear()
+            padde.ht()
+
+            del(players[playername])
 
 
 def setup():

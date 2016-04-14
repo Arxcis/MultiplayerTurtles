@@ -21,6 +21,7 @@ def listen_to_server(container, tom):
     port = 1337
 
     s.connect((ip, port))
+    print(name)
     send_message(protocol.CREATE(name))
     while True:
         message = s.recv(1024).decode(encoding='utf-8')
