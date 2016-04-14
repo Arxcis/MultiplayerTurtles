@@ -11,7 +11,6 @@ import networks
 
 screen = Screen()
 players = {}
-playerself = "green"
 
 
 class Handler:
@@ -74,6 +73,9 @@ class Handler:
 
 
 def setup():
+    # Enter player-color
+    playerself = screen.textinput("Player", "Enter a valid turtle-color")
+
     # Setup objects
     players[playerself] = Turtle()
     handler = Handler()
